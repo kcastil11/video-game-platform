@@ -1,0 +1,10 @@
+<h1>Your Profile</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="bio">Bio:</label>
+    <textarea name="bio">{{ user.profile.bio }}</textarea>
+    <label for="avatar">Avatar:</label>
+    <input type="file" name="avatar">
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'logout' %}">Logout</a>
